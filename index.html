@@ -1,0 +1,380 @@
+Вот HTML-страница с таблицей 20 самых частотных фонетиков для HSK, как вы и просили.
+
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20 главных фонетиков китайского языка | Таблица 形声字</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #f7f3e9 0%, #e8e0d3 100%);
+            font-family: 'Segoe UI', 'Noto Sans', system-ui, 'PingFang SC', Roboto, 'Helvetica Neue', sans-serif;
+            padding: 2rem 1.5rem;
+            color: #2c2418;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* заголовок */
+        .hero {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #aa7a3c, #5a3e1f);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #5e4b32;
+            border-bottom: 2px solid #dccfbc;
+            display: inline-block;
+            padding-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .legend {
+            background: #fffaf2;
+            border-radius: 2rem;
+            padding: 0.8rem 1.6rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.8rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid #ede3d5;
+        }
+
+        .legend span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge-sm {
+            background: #2c5f2d;
+            color: white;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-sound {
+            background: #b4653a;
+            color: white;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            font-family: monospace;
+            font-size: 0.8rem;
+        }
+
+        /* сетка таблиц */
+        .grid-group {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .group-card {
+            background: #ffffffdd;
+            backdrop-filter: blur(2px);
+            border-radius: 2rem;
+            box-shadow: 0 12px 24px -12px rgba(0,0,0,0.2);
+            overflow: hidden;
+            border: 1px solid #f0e3d4;
+            transition: transform 0.1s ease;
+        }
+
+        .group-header {
+            background: #f5ede2;
+            padding: 0.8rem 1.5rem;
+            border-bottom: 2px solid #ddcebc;
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: -0.2px;
+            color: #4e3a25;
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .group-header .group-name {
+            background: #d4c2aa;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #2e241a;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background: #e7dbcc;
+            padding: 1rem 0.8rem;
+            font-weight: 600;
+            color: #3b2c1c;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: center;
+            border-bottom: 1px solid #cfbea8;
+        }
+
+        td {
+            padding: 1rem 0.6rem;
+            border-bottom: 1px solid #efe2d2;
+            text-align: center;
+            vertical-align: middle;
+            background-color: #fefcf8;
+        }
+
+        .chinese-big {
+            font-size: 1.8rem;
+            font-weight: 500;
+            font-family: 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            line-height: 1.2;
+        }
+
+        .pinyin {
+            font-family: monospace;
+            font-weight: 600;
+            color: #b4653a;
+            background: #f9efE4;
+            display: inline-block;
+            padding: 0.1rem 0.4rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+        }
+
+        .meaning {
+            font-size: 0.85rem;
+            color: #4a3a28;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .radical-hint {
+            font-size: 0.7rem;
+            color: #7c6a53;
+            display: block;
+            margin-top: 4px;
+        }
+
+        .sound-em {
+            font-weight: 700;
+            color: #9b4b2c;
+            background: #faeadc;
+            border-radius: 20px;
+            padding: 0 6px;
+            display: inline-block;
+        }
+
+        @media (max-width: 760px) {
+            body {
+                padding: 1rem;
+            }
+            td, th {
+                padding: 0.6rem 0.3rem;
+            }
+            .chinese-big {
+                font-size: 1.4rem;
+            }
+            .meaning {
+                font-size: 0.75rem;
+            }
+            .group-header {
+                font-size: 1.1rem;
+            }
+        }
+
+        .footer-note {
+            margin-top: 2.5rem;
+            background: #e6dacd;
+            border-radius: 2rem;
+            padding: 1.2rem 1.8rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #3c2e1f;
+            border: 1px solid #cdb99e;
+        }
+        .footer-note strong {
+            color: #a55123;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <h1>🎋 形声字 · Смысл + Звук</h1>
+        <div class="sub">20 главных фонетиков, которые открывают 40% иероглифов HSK 1–4</div>
+    </div>
+    <div class="legend">
+        <span>📖 <span class="badge-sm">РАДИКАЛ (смысл)</span> + <span class="badge-sound">🎵 马 = ЗВУК</span></span>
+        <span>🧩 Левый/верхний = смысл, правый/нижний = звук</span>
+        <span>💡 妈 ← 女(женщина) + 马(лошадь) → ma/mā</span>
+    </div>
+
+    <div class="grid-group">
+        <!-- ГРУППА 1: Абсолютные лидеры -->
+        <div class="group-card">
+            <div class="group-header">
+                🔥 Группа 1 · Лидеры-миллионеры
+                <span class="group-name">звук почти не меняется</span>
+            </div>
+            <table>
+                <thead>
+                    <tr><th>Фонетик (звук)</th><th>Пример</th><th>Разбор → значение</th><th>Чтение</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td class="chinese-big">🐴 马 mǎ</td><td class="chinese-big">妈</td><td class="meaning">女(женщина) + 马 → мама</td><td><span class="pinyin">mā</span></td></tr>
+                    <tr><td class="chinese-big">🐴 马 mǎ</td><td class="chinese-big">码</td><td class="meaning">石(камень) + 马 → номер, гиря</td><td><span class="pinyin">mǎ</span></td></tr>
+                    <tr><td class="chinese-big">🐴 马 mǎ</td><td class="chinese-big">蚂</td><td class="meaning">虫(насекомое) + 马 → муравей</td><td><span class="pinyin">mǎ</span></td></tr>
+                    <tr><td class="chinese-big">🐴 马 mǎ</td><td class="chinese-big">骂</td><td class="meaning">吅(кричать) + 马 → ругать</td><td><span class="pinyin">mà</span></td></tr>
+                    <tr><td class="chinese-big">💚 青 qīng</td><td class="chinese-big">清</td><td class="meaning">氵(вода) + 青 → чистый (вода)</td><td><span class="pinyin">qīng</span></td></tr>
+                    <tr><td class="chinese-big">💚 青 qīng</td><td class="chinese-big">情</td><td class="meaning">忄(сердце) + 青 → чувство, любовь</td><td><span class="pinyin">qíng</span></td></tr>
+                    <tr><td class="chinese-big">💚 青 qīng</td><td class="chinese-big">晴</td><td class="meaning">日(солнце) + 青 → ясно (солнце)</td><td><span class="pinyin">qíng</span></td></tr>
+                    <tr><td class="chinese-big">📦 包 bāo</td><td class="chinese-big">抱</td><td class="meaning">扌(рука) + 包 → обнимать</td><td><span class="pinyin">bào</span></td></tr>
+                    <tr><td class="chinese-big">📦 包 bāo</td><td class="chinese-big">跑</td><td class="meaning">足(нога) + 包 → бежать</td><td><span class="pinyin">pǎo</span></td></tr>
+                    <tr><td class="chinese-big">📦 包 bāo</td><td class="chinese-big">饱</td><td class="meaning">饣(еда) + 包 → сытый</td><td><span class="pinyin">bǎo</span></td></tr>
+                    <tr><td class="chinese-big">🧭 方 fāng</td><td class="chinese-big">放</td><td class="meaning">攵(действие) + 方 → ставить, отпускать</td><td><span class="pinyin">fàng</span></td></tr>
+                    <tr><td class="chinese-big">🧭 方 fāng</td><td class="chinese-big">房</td><td class="meaning">户(дверь) + 方 → комната, дом</td><td><span class="pinyin">fáng</span></td></tr>
+                    <tr><td class="chinese-big">🧭 方 fāng</td><td class="chinese-big">访</td><td class="meaning">讠(речь) + 方 → навещать</td><td><span class="pinyin">fǎng</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ГРУППА 2: Еда, вода, движение (фрукт, разделение) -->
+        <div class="group-card">
+            <div class="group-header">
+                🍜 Группа 2 · Еда, вода, движение
+                <span class="group-name">звуковые переходы guo/ke, fen/ban</span>
+            </div>
+            <table>
+                <thead><tr><th>Фонетик (звук)</th><th>Иероглиф</th><th>Смысл + звук → значение</th><th>Чтение</th></tr></thead>
+                <tbody>
+                    <tr><td class="chinese-big">分 fēn</td><td class="chinese-big">份</td><td class="meaning">亻(человек) + 分 → доля, часть</td><td><span class="pinyin">fèn</span></td></tr>
+                    <tr><td class="chinese-big">分 fēn</td><td class="chinese-big">粉</td><td class="meaning">米(рис) + 分 → порошок, мука</td><td><span class="pinyin">fěn</span></td></tr>
+                    <tr><td class="chinese-big">分 fēn</td><td class="chinese-big">盆</td><td class="meaning">皿(чаша) + 分 → таз, миска</td><td><span class="pinyin">pén</span></td></tr>
+                    <tr><td class="chinese-big">白 bái</td><td class="chinese-big">怕</td><td class="meaning">忄(сердце) + 白 → бояться</td><td><span class="pinyin">pà</span></td></tr>
+                    <tr><td class="chinese-big">白 bái</td><td class="chinese-big">拍</td><td class="meaning">扌(рука) + 白 → хлопать,拍</td><td><span class="pinyin">pāi</span></td></tr>
+                    <tr><td class="chinese-big">白 bái</td><td class="chinese-big">伯</td><td class="meaning">亻(человек) + 白 → дядя (старший брат)</td><td><span class="pinyin">bó</span></td></tr>
+                    <tr><td class="chinese-big">果 guǒ</td><td class="chinese-big">课</td><td class="meaning">讠(речь) + 果 → урок, занятие</td><td><span class="pinyin">kè</span></td></tr>
+                    <tr><td class="chinese-big">果 guǒ</td><td class="chinese-big">棵</td><td class="meaning">木(дерево) + 果 → счёт. слово для деревьев</td><td><span class="pinyin">kē</span></td></tr>
+                    <tr><td class="chinese-big">果 guǒ</td><td class="chinese-big">裸</td><td class="meaning">衤(одежда) + 果 → голый</td><td><span class="pinyin">luǒ</span></td></tr>
+                    <tr><td class="chinese-big">元 yuán</td><td class="chinese-big">玩</td><td class="meaning">王(нефрит/камень) + 元 → играть</td><td><span class="pinyin">wán</span></td></tr>
+                    <tr><td class="chinese-big">元 yuán</td><td class="chinese-big">远</td><td class="meaning">辶(движение) + 元 → далёкий</td><td><span class="pinyin">yuǎn</span></td></tr>
+                    <tr><td class="chinese-big">元 yuán</td><td class="chinese-big">园</td><td class="meaning">囗(ограда) + 元 → сад, парк</td><td><span class="pinyin">yuán</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ГРУППА 3: Руки, рот, тело (工,少,寸,可,羊) -->
+        <div class="group-card">
+            <div class="group-header">
+                ✋ Группа 3 · Руки, рот, тело
+                <span class="group-name">частотные ключи действий</span>
+            </div>
+            <table>
+                <thead><tr><th>Фонетик (звук)</th><th>Иероглиф</th><th>Разбор</th><th>Чтение</th></tr></thead>
+                <tbody>
+                    <tr><td class="chinese-big">工 gōng</td><td class="chinese-big">江</td><td class="meaning">氵(вода) + 工 → река (Янцзы и др.)</td><td><span class="pinyin">jiāng</span></td></tr>
+                    <tr><td class="chinese-big">工 gōng</td><td class="chinese-big">红</td><td class="meaning">纟(шёлк) + 工 → красный цвет</td><td><span class="pinyin">hóng</span></td></tr>
+                    <tr><td class="chinese-big">工 gōng</td><td class="chinese-big">扛</td><td class="meaning">扌(рука) + 工 → нести на плече</td><td><span class="pinyin">káng</span></td></tr>
+                    <tr><td class="chinese-big">少 shǎo</td><td class="chinese-big">沙</td><td class="meaning">氵(вода) + 少 → песок</td><td><span class="pinyin">shā</span></td></tr>
+                    <tr><td class="chinese-big">少 shǎo</td><td class="chinese-big">吵</td><td class="meaning">口(рот) + 少 → шуметь, ссориться</td><td><span class="pinyin">chǎo</span></td></tr>
+                    <tr><td class="chinese-big">少 shǎo</td><td class="chinese-big">抄</td><td class="meaning">扌(рука) + 少 → копировать, переписывать</td><td><span class="pinyin">chāo</span></td></tr>
+                    <tr><td class="chinese-big">寸 cùn</td><td class="chinese-big">村</td><td class="meaning">木(дерево) + 寸 → деревня</td><td><span class="pinyin">cūn</span></td></tr>
+                    <tr><td class="chinese-big">寸 cùn</td><td class="chinese-big">讨</td><td class="meaning">讠(речь) + 寸 → требовать, обсуждать</td><td><span class="pinyin">tǎo</span></td></tr>
+                    <tr><td class="chinese-big">可 kě</td><td class="chinese-big">河</td><td class="meaning">氵(вода) + 可 → река</td><td><span class="pinyin">hé</span></td></tr>
+                    <tr><td class="chinese-big">可 kě</td><td class="chinese-big">何</td><td class="meaning">亻(человек) + 可 → что? какой?</td><td><span class="pinyin">hé</span></td></tr>
+                    <tr><td class="chinese-big">羊 yáng</td><td class="chinese-big">洋</td><td class="meaning">氵(вода) + 羊 → океан</td><td><span class="pinyin">yáng</span></td></tr>
+                    <tr><td class="chinese-big">羊 yáng</td><td class="chinese-big">鲜</td><td class="meaning">鱼(рыба) + 羊 → свежий, вкусный</td><td><span class="pinyin">xiān</span></td></tr>
+                    <tr><td class="chinese-big">羊 yáng</td><td class="chinese-big">样</td><td class="meaning">木(дерево) + 羊 → образец, вид</td><td><span class="pinyin">yàng</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ГРУППА 4: Топ для HSK 1-3 (令,卖,同,见,车) -->
+        <div class="group-card">
+            <div class="group-header">
+                🧠 Группа 4 · Самые полезные HSK 1–3
+                <span class="group-name">100% узнаваемые в повседневке</span>
+            </div>
+            <table>
+                <thead><tr><th>Фонетик (звук)</th><th>Иероглиф</th><th>Значение + разбор</th><th>Чтение</th></tr></thead>
+                <tbody>
+                    <tr><td class="chinese-big">令 lìng</td><td class="chinese-big">冷</td><td class="meaning">冫(лёд) + 令 → холодный</td><td><span class="pinyin">lěng</span></td></tr>
+                    <tr><td class="chinese-big">令 lìng</td><td class="chinese-big">领</td><td class="meaning">页(голова, воротник) + 令 → воротник, вести</td><td><span class="pinyin">lǐng</span></td></tr>
+                    <tr><td class="chinese-big">令 lìng</td><td class="chinese-big">邻</td><td class="meaning">阝(место) + 令 → сосед</td><td><span class="pinyin">lín</span></td></tr>
+                    <tr><td class="chinese-big">卖 mài</td><td class="chinese-big">读</td><td class="meaning">讠(речь) + 卖 → читать</td><td><span class="pinyin">dú</span></td></tr>
+                    <tr><td class="chinese-big">卖 mài</td><td class="chinese-big">续</td><td class="meaning">纟(нить) + 卖 → продолжать</td><td><span class="pinyin">xù</span></td></tr>
+                    <tr><td class="chinese-big">同 tóng</td><td class="chinese-big">铜</td><td class="meaning">金(металл) + 同 → медь</td><td><span class="pinyin">tóng</span></td></tr>
+                    <tr><td class="chinese-big">同 tóng</td><td class="chinese-big">洞</td><td class="meaning">氵(вода) + 同 → пещера, дыра</td><td><span class="pinyin">dòng</span></td></tr>
+                    <tr><td class="chinese-big">见 jiàn</td><td class="chinese-big">现</td><td class="meaning">王(нефрит) + 见 → появляться, сейчас</td><td><span class="pinyin">xiàn</span></td></tr>
+                    <tr><td class="chinese-big">见 jiàn</td><td class="chinese-big">视</td><td class="meaning">礻(духи/вид) + 见 → смотреть, зрение</td><td><span class="pinyin">shì</span></td></tr>
+                    <tr><td class="chinese-big">车 chē</td><td class="chinese-big">连</td><td class="meaning">辶(движение) + 车 → соединять, связывать</td><td><span class="pinyin">lián</span></td></tr>
+                    <tr><td class="chinese-big">车 chē</td><td class="chinese-big">军</td><td class="meaning">冖(крышка) + 车 → армия</td><td><span class="pinyin">jūn</span></td></tr>
+                    <tr><td class="chinese-big">车 chē</td><td class="chinese-big">阵</td><td class="meaning">阝(холм) + 车 → строй, позиция</td><td><span class="pinyin">zhèn</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- БОНУС: Золотая пятёрка "также/земля/он/она" -->
+        <div class="group-card">
+            <div class="group-header">
+                ⚡ Бонус-звезда · Фонетик 也 yě
+                <span class="group-name">5 слов за 1 минуту: 他,她,地,池,驰</span>
+            </div>
+            <table>
+                <thead><tr><th>Фонетик 也 yě</th><th>Иероглиф</th><th>Смысловой ключ</th><th>Чтение</th><th>Значение</th></tr></thead>
+                <tbody>
+                    <tr><td class="chinese-big">也 yě</td><td class="chinese-big">他</td><td class="meaning">亻 (человек)</td><td><span class="pinyin">tā</span></td><td class="meaning">ОН</td></tr>
+                    <tr><td class="chinese-big">也 yě</td><td class="chinese-big">她</td><td class="meaning">女 (женщина)</td><td><span class="pinyin">tā</span></td><td class="meaning">ОНА</td></tr>
+                    <tr><td class="chinese-big">也 yě</td><td class="chinese-big">地</td><td class="meaning">土 (земля)</td><td><span class="pinyin">dì</span></td><td class="meaning">ЗЕМЛЯ, -но (суффикс)</td></tr>
+                    <tr><td class="chinese-big">也 yě</td><td class="chinese-big">池</td><td class="meaning">氵 (вода)</td><td><span class="pinyin">chí</span></td><td class="meaning">ПРУД, бассейн</td></tr>
+                    <tr><td class="chinese-big">也 yě</td><td class="chinese-big">驰</td><td class="meaning">马 (лошадь)</td><td><span class="pinyin">chí</span></td><td class="meaning">МЧАТЬСЯ, нестись</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        🧠 <strong>Как это работает:</strong> 左形右声 — левый радикал (смысл), правый — звук. <br>
+        📌 Зная фонетик <strong>马 mǎ</strong> → вы уже узнаёте <strong>妈, 码, 蚂, 骂</strong>.<br>
+        🔁 Тон может меняться, но б<strong>азовые согласные + гласная</strong> почти всегда совпадают. <br>
+        ✅ 20 фонетиков покрывают ~40% лексики HSK 1-4. Учите осмысленно!
+    </div>
+</div>
+</body>
+</html>
+```
