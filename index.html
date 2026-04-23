@@ -18,7 +18,6 @@
             line-height: 1.5;
         }
 
-        /* компактная панель — горизонтальный скролл, не перекрывает */
         .nav-compact {
             background: #2c2418;
             position: sticky;
@@ -57,7 +56,6 @@
             padding: 1.5rem 1.5rem 2rem;
         }
 
-        /* секции */
         .section {
             background: #fffdf9;
             border-radius: 2rem;
@@ -108,7 +106,7 @@
         }
         .grid-2cols {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1rem;
         }
         table {
@@ -129,16 +127,6 @@
             background: #e7d8c6;
             font-weight: 700;
         }
-        .pinyin {
-            font-family: monospace;
-            font-weight: 600;
-            color: #b4653a;
-            background: #f9efe4;
-            display: inline-block;
-            padding: 0.1rem 0.4rem;
-            border-radius: 12px;
-            font-size: 0.85rem;
-        }
         .footer {
             margin-top: 2rem;
             text-align: center;
@@ -149,7 +137,7 @@
         }
         @media (max-width: 700px) {
             .section-content { padding: 1rem; }
-            .chinese-big { font-size: 1.5rem; }
+            .chinese-big { font-size: 1.4rem; }
         }
     </style>
 </head>
@@ -157,18 +145,18 @@
 <div class="nav-compact">
     <div class="nav-links">
         <a href="#rule0">🏠 Смысл+Звук</a>
-        <a href="#rule1">🐴 1. 马 ma</a>
-        <a href="#rule2">💚 2. 青 qing</a>
-        <a href="#rule3">💧 3. Вода 氵</a>
-        <a href="#rule4">🔥 4. Огонь 火</a>
+        <a href="#rule1">🎵 1. Ключ-фонетик</a>
+        <a href="#rule2">🎯 2. Ключ-смысловик</a>
+        <a href="#rule3">🏃 3. Глаголы движения</a>
+        <a href="#rule4">☕ 4. Заимствования</a>
         <a href="#rule5">⚖️ 5. Противоположности</a>
         <a href="#rule6">📖 6. Контекст</a>
-        <a href="#rule7">🌊 7. Группы слов</a>
-        <a href="#rule8">⭐ 8. Топ-20</a>
-        <a href="#rule9">🏃 9. Глаголы движения</a>
-        <a href="#rule10">☕ 10. Заимствования</a>
-        <a href="#rule11">🌲 11. Повтор = сила</a>
-        <a href="#rule12">🔁 12. Ключ-смысловик</a>
+        <a href="#rule7">⭐ 7. Топ-10 радикалов</a>
+        <a href="#rule8">🌲 8. Повтор = сила</a>
+        <a href="#rule9">🧩 9. Группы слов</a>
+        <a href="#rule10">📊 10. Топ-20 иероглифов</a>
+        <a href="#rule11">🔊 11. Фонетик 马</a>
+        <a href="#rule12">💚 12. Фонетик 青</a>
     </div>
 </div>
 <div class="container">
@@ -198,4 +186,550 @@
         </div>
     </div>
 
-    <!-- ПРАВИЛО
+    <!-- ПРАВИЛО 1: КЛЮЧ-ФОНЕТИК -->
+    <div id="rule1" class="section">
+        <div class="section-header">
+            <span class="section-number">Секрет 1</span>
+            <span class="section-title">🎵 Ключ-фонетик: один элемент → одинаковое звучание</span>
+        </div>
+        <div class="section-content">
+            <p><strong>Главная идея:</strong> Если ты видишь знакомый иероглиф внутри другого — скорее всего, он подсказывает произношение. Это самый мощный инструмент для быстрого набора словарного запаса.</p>
+            
+            <div class="example-block">
+                <strong>🌟 Звездный пример: 青 qīng (зелёный/синий, чистый)</strong><br>
+                <span class="chinese-big">请 qǐng</span> (просить) = 讠(речь) + 青<br>
+                <span class="chinese-big">清 qīng</span> (чистый) = 氵(вода) + 青<br>
+                <span class="chinese-big">晴 qíng</span> (солнечно) = 日(солнце) + 青<br>
+                <span class="chinese-big">情 qíng</span> (чувство) = 忄(сердце) + 青<br>
+                <span class="chinese-big">睛 jīng</span> (глазное яблоко) = 目(глаз) + 青<br>
+                <span class="chinese-big">蜻 qīng</span> (стрекоза) = 虫(насекомое) + 青<br>
+                💡 <strong>Запомни:</strong> Все они звучат как qing или jing! Тон может меняться, но каркас остаётся.
+            </div>
+
+            <div class="grid-2cols">
+                <div class="example-block">
+                    <strong>🐴 马 mǎ (лошадь) → звук ma</strong><br>
+                    妈 mā (мама)<br>
+                    码 mǎ (номер)<br>
+                    蚂 mǎ (муравей)<br>
+                    骂 mà (ругать)<br>
+                    玛 mǎ (агат)
+                </div>
+                <div class="example-block">
+                    <strong>📦 包 bāo (свёрток) → звук bao/pao</strong><br>
+                    抱 bào (обнимать)<br>
+                    跑 pǎo (бежать)<br>
+                    泡 pào (пузырь)<br>
+                    饱 bǎo (сытый)<br>
+                    炮 pào (пушка)
+                </div>
+                <div class="example-block">
+                    <strong>🔧 工 gōng (работа) → звук gong/hong/jiang</strong><br>
+                    江 jiāng (река)<br>
+                    红 hóng (красный)<br>
+                    扛 káng (нести)<br>
+                    虹 hóng (радуга)
+                </div>
+                <div class="example-block">
+                    <strong>🧭 方 fāng (сторона) → звук fang</strong><br>
+                    放 fàng (ставить)<br>
+                    房 fáng (комната)<br>
+                    访 fǎng (навещать)<br>
+                    纺 fǎng (прясть)<br>
+                    芳 fāng (аромат)
+                </div>
+            </div>
+            <div class="example-block">
+                🧠 <strong>Мнемоника для запоминания:</strong> «Фонетик — это музыкальный ключ иероглифа. Нашёл знакомый элемент — сыграй его звук, и ты уже близок к правильному чтению.»
+            </div>
+        </div>
+    </div>
+
+    <!-- ПРАВИЛО 2: КЛЮЧ-СМЫСЛОВИК -->
+    <div id="rule2" class="section">
+        <div class="section-header">
+            <span class="section-number">Секрет 2</span>
+            <span class="section-title">🎯 Ключ-смысловик: радикал задаёт тему</span>
+        </div>
+        <div class="section-content">
+            <p><strong>Главная идея:</strong> Радикал (ключ) — это смысловой компонент. Если ты знаешь несколько ключей, ты можешь примерно понимать тему любого иероглифа, даже не зная его точного перевода.</p>
+            
+            <div class="grid-2cols">
+                <div class="example-block">
+                    <strong>💧 氵 (вода)</strong><br>
+                    河 hé — река<br>
+                    海 hǎi — море<br>
+                    湖 hú — озеро<br>
+                    洗 xǐ — мыть<br>
+                    游 yóu — плавать<br>
+                    江 jiāng — большая река<br>
+                    汗 hàn — пот<br>
+                    酒 jiǔ — алкоголь<br>
+                    汤 tāng — суп<br>
+                    泪 lèi — слеза<br>
+                    汽 qì — пар
+                </div>
+                <div class="example-block">
+                    <strong>🔥 火 / 灬 (огонь)</strong><br>
+                    烧 shāo — жечь<br>
+                    炒 chǎo — жарить<br>
+                    烤 kǎo — запекать<br>
+                    热 rè — горячий<br>
+                    灯 dēng — лампа<br>
+                    炸 zhá — жарить во фритюре<br>
+                    烟 yān — дым<br>
+                    烫 tàng — обжигать<br>
+                    烈 liè — яростный
+                </div>
+                <div class="example-block">
+                    <strong>🗣️ 讠 (речь)</strong><br>
+                    说 shuō — говорить<br>
+                    请 qǐng — просить<br>
+                    读 dú — читать<br>
+                    谢 xiè — благодарить<br>
+                    话 huà — речь, слова<br>
+                    讲 jiǎng — рассказывать<br>
+                    认 rèn — узнавать
+                </div>
+                <div class="example-block">
+                    <strong>🧠 忄 / 心 (сердце, чувства)</strong><br>
+                    情 qíng — чувство<br>
+                    怕 pà — бояться<br>
+                    忙 máng — занятой<br>
+                    快 kuài — быстрый (радостный)<br>
+                    想 xiǎng — думать, хотеть<br>
+                    忘 wàng — забывать<br>
+                    您 nín — Вы (вежливо)
+                </div>
+            </div>
+            
+            <div class="example-block">
+                💡 <strong>Практический совет:</strong> Как только видишь незнакомый иероглиф — первым делом найди радикал. 氵 → вода, 火 → огонь, 木 → дерево, 口 → рот/отверстие. Это сразу сужает круг возможных значений.
+            </div>
+        </div>
+    </div>
+
+    <!-- ПРАВИЛО 3: ГЛАГОЛЫ ДВИЖЕНИЯ -->
+    <div id="rule3" class="section">
+        <div class="section-header">
+            <span class="section-number">Секрет 3</span>
+            <span class="section-title">🏃 Глаголы движения: ключи 辶, 足, 扌</span>
+        </div>
+        <div class="section-content">
+            <p><strong>Главная идея:</strong> Движение в китайском языке передаётся через специальные ключи: 足 (нога), 辶 (дорога/движение), 扌 (рука). Запомни эти три ключа — и ты узнаешь десятки глаголов.</p>
+            
+            <table>
+                <thead><tr><th>Иероглиф</th><th>Пиньинь</th><th>Ключ</th><th>Разбор</th><th>Значение</th><th>Пример</th></tr></thead>
+                <tbody>
+                    <tr><td class="chinese-big">跑</td><td>pǎo</td><td>足 (нога)</td><td>足 + 包 (звук bāo)</td><td>бежать</td><td>跑步 — бег трусцой</td></tr>
+                    <tr><td class="chinese-big">跳</td><td>tiào</td><td>足</td><td>足 + 兆</td><td>прыгать</td><td>跳舞 — танцевать</td></tr>
+                    <tr><td class="chinese-big">跟</td><td>gēn</td><td>足</td><td>足 + 艮</td><td>следовать, пятка</td><td>跟随 — следовать за</td></tr>
+                    <tr><td class="chinese-big">过</td><td>guò</td><td>辶 (движение)</td><td>辶 + 寸</td><td>проходить, пересечь</td><td>过来 — подойти</td></tr>
+                    <tr><td class="chinese-big">进</td><td>jìn</td><td>辶</td><td>辶 + 井</td><td>входить</td><td>进来 — войти</td></tr>
+                    <tr><td class="chinese-big">送</td><td>sòng</td><td>辶</td><td>辶 + 关</td><td>провожать, отправлять</td><td>送行 — проводить</td></tr>
+                    <tr><td class="chinese-big">追</td><td>zhuī</td><td>辶</td><td>辶 + 阜</td><td>догонять, преследовать</td><td>追赶 — догонять</td></tr>
+                    <tr><td class="chinese-big">打</td><td>dǎ</td><td>扌 (рука)</td><td>扌 + 丁</td><td>бить, делать</td><td>打球 — играть в мяч</td></tr>
+                    <tr><td class="chinese-big">拉</td><td>lā</td><td>扌</td><td>扌 + 立</td><td>тянуть</td><td>拉手 — взяться за руки</td></tr>
+                    <tr><td class="chinese-big">推</td><td>tuī</td><td>扌</td><td>扌 + 隹</td><td>толкать</td><td>推门 — толкнуть дверь</td></tr>
+                </tbody>
+            </table>
+            <div class="example-block">
+                🚀 <strong>Секрет:</strong> 辶 встречается в десятках глаголов: 逃 (убегать), 还 (возвращаться), 通 (проходить), 连 (соединять). Если видишь этот ключ — ищи значение, связанное с перемещением или дорогой.
+            </div>
+        </div>
+    </div>
+
+    <!-- ПРАВИЛО 4: ЗАИМСТВОВАНИЯ -->
+    <div id="rule4" class="section">
+        <div class="section-header">
+            <span class="section-number">Секрет 4</span>
+            <span class="section-title">☕ Заимствования: звук важнее смысла</span>
+        </div>
+        <div class="section-content">
+            <p><strong>Главная идея:</strong> Для иностранных слов китайцы подбирают иероглифы, которые звучат похоже на оригинал. Смысл иероглифов при этом часто не имеет значения — работает чистая фонетика.</p>
+            
+            <div class="grid-2cols">
+                <div class="example-block">
+                    <strong>🍫 Еда и напитки</strong><br>
+                    咖啡 kāfēi — кофе (coffee)<br>
+                    巧克力 qiǎokèlì — шоколад (chocolate)<br>
+                    汉堡包 hànbǎobāo — гамбургер (hamburger)<br>
+                    可乐 kělè — кола (cola)<br>
+                    披萨 pīsà — пицца (pizza)<br>
+                    沙拉 shālā — салат (salad)
+                </div>
+                <div class="example-block">
+                    <strong>🛋️ Быт и техника</strong><br>
+                    沙发 shāfā — диван (sofa)<br>
+                    吉他 jítā — гитара (guitar)<br>
+                    黑客 hēikè — хакер (hacker)<br>
+                    博客 bókè — блог (blog)<br>
+                    巴士 bāshì — автобус (bus)<br>
+                    坦克 tǎnkè — танк (tank)
+                </div>
+                <div class="example-block">
+                    <strong>🧠 Наука и культура</strong><br>
+                    逻辑 luóji — логика (logic)<br>
+                    幽默 yōumò — юмор (humour)<br>
+                    模特 mótè — модель (model)<br>
+                    蒙太奇 méngtàiqí — монтаж (montage)<br>
+                    雷达 léidá — радар (radar)
+                </div>
+                <div class="example-block">
+                    <strong>🚕 Транспорт</strong><br>
+                    出租车 chūzūchē — такси (букв. арендованная машина)<br>
+                    摩托 mótuō — мотоцикл (motor)<br>
+                    卡车 kǎchē — грузовик (truck)<br>
+                    吉普 jípǔ — джип (jeep)
+                </div>
+            </div>
+            <div class="example-block">
+                🎧 <strong>Мнемоника:</strong> Читай иероглифы вслух так, будто ты читаешь иностранное слово. 咖啡 kāfēi → ка-фэй → coffee. 吉他 jítā → ги-та → guitar. Это работает на ура!
+            </div>
+        </div>
+    </div>
+
+    <!-- ПРАВИЛО 5: ПРОТИВОПОЛОЖНОСТИ -->
+    <div id="rule5" class="section">
+        <div class="section-header">
+            <span class="section-number">Секрет 5</span>
+            <span class="section-title">⚖️ Противоположности: изменение черты = новый смысл</span>
+        </div>
+        <div class="section-content">
+            <p><strong>Главная идея:</strong> Многие антонимы в китайском строятся по принципу зеркального отражения или добавления/убирания одной черты.</p>
+            
+            <div class="grid-2cols">
+                <div class="example-block">
+                    <strong>📐 Пространство</strong><br>
+                    上 shàng (верх) — 下 xià (низ)<br>
+                    前 qián (перед) — 后 hòu (зад)<br>
+                    左 zuǒ (левый) — 右 yòu (правый)<br>
+                    里 lǐ (внутри) — 外 wài (снаружи)<br>
+                    东 dōng (восток) — 西 xī (запад)
+                </div>
+                <div class="example-block">
+                    <strong>📊 Количество</strong><br>
+                    多 duō (много) — 少 shǎo (мало)<br>
+                    大 dà (большой) — 小 xiǎo (маленький)<br>
+                    长 cháng (длинный) — 短 duǎn (короткий)<br>
+                    高 gāo (высокий) — 矮 ǎi (низкий)<br>
+                    重 zhòng (тяжёлый) — 轻 qīng (лёгкий)
+                </div>
+                <div class="example-block">
+                    <strong>🔘 Состояние</strong><br>
+                    有 yǒu (иметь) — 无 wú (не иметь)<br>
+                    开 kāi (открыть) — 关 guān (закрыть)<br>
+                    来 lái (прийти) — 去 qù (уйти)<br>
+                    买 mǎi (купить) — 卖 mài (продать)<br>
+                    热 rè (горячий) — 冷 lěng (холодный)
+                </div>
+                <div class="example-block">
+                    <strong>⏱️ Время и качество</strong><br>
+                    早 zǎo (рано) — 晚 wǎn (поздно)<br>
+                    快 kuài (быстро) — 慢 màn (медленно)<br>
+                    好 hǎo (хорошо) — 坏 huài (плохо)<br>
+                    新 xīn (новый) — 旧 jiù (старый)<br>
+                    对 duì (правильно) — 错 cuò (ошибочно)
+                </div>
+            </div>
+            <div class="example-block">
+                💡 <strong>Совет:</strong> Учите антонимы парами — это в два раза быстрее. Если выучил 上, сразу запоминай 下 и пример: 上面 (наверху) — 下面 (внизу).
+            </div>
+        </div>
+    </div>
+
+    <!-- ПРАВИЛО 6: КОНТЕКСТ -->
+    <div id="rule6" class="section">
+        <div class="section-header">
+            <span class="section-number">Секрет 6</span>
+            <span class="section-title">📖 Контекст: одно слово — много значений</span>
+        </div>
+        <div class="section-content">
+            <p><strong>Главная идея:</strong> Один и тот же иероглиф может означать совершенно разные вещи в зависимости от контекста. Не пытайся найти «единственный правильный перевод» — учи слова в связках.</p>
+            
+            <div class="grid-2cols">
+                <div class="example-block">
+                    <strong>🔓 开 kāi</strong><br>
+                    开门 — открыть дверь<br>
+                    开车 — вести машину<br>
+                    开水 — кипяток (открытая вода)<br>
+                    开会 — проводить собрание<br>
+                    开玩笑 — шутить (открыть шутку)<br>
+                    开心 — радостный (открыть сердце)
+                </div>
+                <div class="example-block">
+                    <strong>✋ 打 dǎ</strong><br>
+                    打球 — играть в мяч / бить по мячу<br>
+                    打电话 — звонить по телефону<br>
+                    打伞 — раскрыть зонт<br>
+                    打电脑 — печатать на компьютере<br>
+                    打工人 — работяга (ударный человек)<br>
+                    打针 — делать укол
+                </div>
+                <div class="example-block">
+                    <strong>⬆️ 上 shàng</strong><br>
+                    上车 — сесть в транспорт<br>
+                    上班 — идти на работу<br>
+                    上网 — выйти в интернет<br>
+                    上课 — идти на урок<br>
+                    上火 — перегреться (воспаление)<br>
+                    上海 — Шанхай (у моря)
+                </div>
+                <div class="example-block">
+                    <strong>📞 叫 jiào</strong><br>
+                    叫名字 — называть имя<br>
+                    叫车 — вызвать такси<br>
+                    大叫 — громко кричать<br>
+                    叫外卖 — заказать еду на вынос
+                </div>
+            </div>
+            <div class="example-block">
+                ✅ <strong>Золотое правило:</strong> Никогда не учи иероглиф без хотя бы одного словосочетания. Контекст — это мост между знаком и реальным значением.
+            </div>
+        </div>
+    </div>
+
+    <!-- ПРАВИЛО 7: ТОП-10 РАДИКАЛОВ -->
+    <div id="rule7" class="section">
+        <div class="section-header">
+            <span class="section-number">Секрет 7</span>
+            <span class="section-title">⭐ Топ-10 радикалов — 50% иероглифов</span>
+        </div>
+        <div class="section-content">
+            <p><strong>Главная идея:</strong> Всего 10 ключей покрывают половину всех иероглифов в повседневном использовании. Выучи их — и ты будешь узнавать структуру большинства слов.</p>
+            
+            <div class="grid-2cols">
+                <div class="example-block"><strong>1️⃣ 亻 (человек)</strong><br>你 ты, 他 он, 们 (суффикс мн.ч.), 休 отдыхать, 住 жить, 作 делать</div>
+                <div class="example-block"><strong>2️⃣ 口 (рот)</strong><br>吃 есть, 喝 пить, 叫 звать, 问 спрашивать, 听 слушать, 唱 петь</div>
+                <div class="example-block"><strong>3️⃣ 氵 (вода)</strong><br>河 река, 海 море, 湖 озеро, 洗 мыть, 游 плавать, 汗 пот</div>
+                <div class="example-block"><strong>4️⃣ 扌 (рука)</strong><br>打 бить, 找 искать, 拉 тянуть, 推 толкать, 提 поднимать, 拍拍 хлопать</div>
+                <div class="example-block"><strong>5️⃣ 木 (дерево)</strong><br>树 дерево, 林 лес, 桌 стол, 椅 стул, 床 кровать, 板 доска</div>
+                <div class="example-block"><strong>6️⃣ 火 (огонь)</strong><br>烧 жечь, 炒 жарить, 灯 лампа, 烟 дым, 炸 жарить во фритюре, 烫 горячий</div>
+                <div class="example-block"><strong>7️⃣ 女 (женщина)</strong><br>妈 мама, 奶 бабушка, 姐 старшая сестра, 妹 младшая сестра, 她 она, 好 хорошо</div>
+                <div class="example-block"><strong>8️⃣ 辶 (движение)</strong><br>过 проходить, 送 провожать, 进 входить, 远 далеко, 近 близко, 还 возвращаться</div>
+                <div class="example-block"><strong>9️⃣ 艹 (трава)</strong><br>花 цветок, 草 трава, 茶 чай, 菜 овощи, 药 лекарство, 苹果 яблоко</div>
+                <div class="example-block"><strong>🔟 心 / 忄 (сердце)</strong><br>想 думать, 忘 забывать, 情 чувство, 怕 бояться, 忙 занятой, 快 радостный</div>
+            </div>
+            <div class="example-block">
+                🎯 <strong>Как использовать:</strong> Начинай изучение нового иероглифа с выделения радикала. 想 = 木 + 目 + 心 (дерево + глаз + сердце → думать). Смысл приходит через ассоциацию.
+            </div>
+        </div>
+    </div>
+
+    <!-- ПРАВИЛО 8: ПОВТОР = СИЛА -->
+    <div id="rule8" class="section">
+        <div class="section-header">
+            <span class="section-number">Секрет 8</span>
+            <span class="section-title">🌲 Повтор = сила: удвоение и утроение смысла</span>
+        </div>
+        <div class="section-content">
+            <p><strong>Главная идея:</strong> Если иероглиф состоит из двух или трёх одинаковых частей, значение становится более интенсивным или масштабным.</p>
+            
+            <div class="grid-2cols">
+                <div class="example-block">
+                    <strong>🌳 木 (дерево)</strong><br>
+                    木 mù — дерево<br>
+                    林 lín — лес, роща<br>
+                    森 sēn — густой лес, чаща<br>
+                    💡 Чем больше деревьев, тем гуще лес.
+                </div>
+                <div class="example-block">
+                    <strong>🔥 火 (огонь)</strong><br>
+                    火 huǒ — огонь<br>
+                    炎 yán — пламя, жара<br>
+                    焱 yàn — искры, сильное пламя<br>
+                    💡 Три огня — настоящий пожар.
+                </div>
+                <div class="example-block">
+                    <strong>👥 人 (человек)</strong><br>
+                    人 rén — человек<br>
+                    从 cóng — следовать (два человека друг за другом)<br>
+                    众 zhòng — толпа (много людей)<br>
+                    💡 Три человека — это уже толпа.
+                </div>
+                <div class="example-block">
+                    <strong>💧 水 (вода)</strong><br>
+                    水 shuǐ — вода<br>
+                    沝 zhǐ — две воды<br>
+                    淼 miǎo — бескрайние воды<br>
+                    💡 Три воды — бескрайний водный простор.
+                </div>
+                <div class="example-block">
+                    <strong>🌞 日 (солнце)</strong><br>
+                    日 rì — солнце<br>
+                    昌 chāng — процветающий<br>
+                    晶 jīng — кристалл, блестящий<br>
+                    💡 Три солнца — яркий блеск.
+                </div>
+                <div class="example-block">
+                    <strong>👂 耳 (ухо)</strong><br>
+                    耳 ěr — ухо<br>
+                    聑 tiē — настороженный<br>
+                    聂 niè — шептаться<br>
+                    💡 Три уха — прислушиваться.
+                </div>
+            </div>
+            <div class="example-block">
+                🔁 <strong>Правило большого пальца:</strong> Увидел повторяющийся элемент — знай, что значение усиливается. «Огонь» → «много огня», «дерево» → «лес», «человек» → «толпа».
+            </div>
+        </div>
+    </div>
+
+    <!-- ПРАВИЛО 9: ГРУППЫ СЛОВ -->
+    <div id="rule9" class="section">
+        <div class="section-header">
+            <span class="section-number">Секрет 9</span>
+            <span class="section-title">🧩 Группы слов: учим семейками по темам</span>
+        </div>
+        <div class="section-content">
+            <p><strong>Главная идея:</strong> Запоминай не отдельные слова, а целые тематические группы. Мозгу легче удерживать связанные понятия, чем разрозненные факты.</p>
+            
+            <div class="grid-2cols">
+                <div class="example-block">
+                    <strong>🍚 ЕДА</strong><br>
+                    吃 chī — есть<br>
+                    喝 hē — пить<br>
+                    饭 fàn — еда, рис<br>
+                    菜 cài — овощи, блюдо<br>
+                    肉 ròu — мясо<br>
+                    鱼 yú — рыба<br>
+                    鸡蛋 jīdàn — яйца
+                </div>
+                <div class="example-block">
+                    <strong>🏠 ДОМ</strong><br>
+                    家 jiā — дом, семья<br>
+                        房间 fángjiān — комната<br>
+                    门 mén — дверь<br>
+                    窗 chuāng — окно<br>
+                    床 chuáng — кровать<br>
+                    桌 zhuō — стол<br>
+                    椅 yǐ — стул
+                </div>
+                <div class="example-block">
+                    <strong>🧥 ОДЕЖДА</strong><br>
+                    衣服 yīfu — одежда<br>
+                    裤子 kùzi — штаны<br>
+                    衬衫 chènshān — рубашка<br>
+                    鞋 xié — обувь<br>
+                    帽子 màozi — шапка<br>
+                    穿 chuān — носить (одежду)
+                </div>
+                <div class="example-block">
+                    <strong>🚗 ТРАНСПОРТ</strong><br>
+                    车 chē — машина, транспорт<br>
+                    开车 kāichē — вести машину<br>
+                    坐车 zuòchē — ехать на транспорте<br>
+                    火车 huǒchē — поезд<br>
+                    飞机 fēijī — самолёт<br>
+                    船 chuán — корабль
+                </div>
+            </div>
+            <div class="example-block">
+                📚 <strong>Как учить:</strong> Выбери тему на неделю (например, «еда»). Каждый день добавляй 3-5 новых слов из этой темы и повторяй старые. Через 7 дней ты будешь знать 20-30 слов по теме.
+            </div>
+        </div>
+    </div>
+
+    <!-- ПРАВИЛО 10: ТОП-20 ИЕРОГЛИФОВ -->
+    <div id="rule10" class="section">
+        <div class="section-header">
+            <span class="section-number">Секрет 10</span>
+            <span class="section-title">📊 Топ-20 иероглифов — 40% любого текста</span>
+        </div>
+        <div class="section-content">
+            <p><strong>Главная идея:</strong> Всего 20 самых частотных иероглифов покрывают почти половину любого текста на китайском. Выучи их в первую очередь.</p>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; font-size: 2rem; font-weight: bold; margin: 1.5rem 0">
+                <span class="chinese-big">的</span> <span class="chinese-big">一</span> <span class="chinese-big">了</span> <span class="chinese-big">是</span> <span class="chinese-big">我</span> <span class="chinese-big">不</span> <span class="chinese-big">人</span> <span class="chinese-big">在</span> <span class="chinese-big">有</span> <span class="chinese-big">他</span>
+                <span class="chinese-big">这</span> <span class="chinese-big">中</span> <span class="chinese-big">大</span> <span class="chinese-big">来</span> <span class="chinese-big">上</span> <span class="chinese-big">国</span> <span class="chinese-big">到</span> <span class="chinese-big">说</span> <span class="chinese-big">们</span> <span class="chinese-big">为</span>
+            </div>
+            
+            <div class="grid-2cols">
+                <div class="example-block">
+                    的 de — показатель принадлежности (моя книга → 我的书)<br>
+                    一 yī — один<br>
+                    了 le — показатель завершённого действия<br>
+                    是 shì — быть, являться<br>
+                    我 wǒ — я<br>
+                    不 bù — не, нет<br>
+                    人 rén — человек<br>
+                    在 zài — находиться, в<br>
+                    有 yǒu — иметь, есть<br>
+                    他 tā — он
+                </div>
+                <div class="example-block">
+                    这 zhè — этот, здесь<br>
+                    中 zhōng — середина, центр<br>
+                    大 dà — большой<br>
+                    来 lái — приходить<br>
+                    上 shàng — верх, подниматься<br>
+                    国 guó — страна<br>
+                    到 dào — до, прибывать<br>
+                    说 shuō — говорить<br>
+                    们 men — показатель множественного числа<br>
+                    为 wèi / wéi — для, делать
+                </div>
+            </div>
+            <div class="example-block">
+                💪 <strong>Задание:</strong> Возьми любой текст на китайском (новости, чат, песню) и посчитай, сколько процентов слов входят в этот топ-20. Ты удивишься результату!
+            </div>
+        </div>
+    </div>
+
+    <!-- ПРАВИЛО 11: ФОНЕТИК 马 -->
+    <div id="rule11" class="section">
+        <div class="section-header">
+            <span class="section-number">Секрет 11</span>
+            <span class="section-title">🐴 Фонетик 马 mǎ: звук ma в деле</span>
+        </div>
+        <div class="section-content">
+            <p><strong>Главная идея:</strong> 马 (лошадь) — один из самых продуктивных фонетиков. Запомнив его чтение mǎ, ты автоматически запоминаешь целую группу слов.</p>
+            
+            <table>
+                <thead><tr><th>Иероглиф</th><th>Пиньинь</th><th>Разбор</th><th>Значение</th><th>Пример</th></tr></thead>
+                <tbody>
+                    <tr><td class="chinese-big">妈</td><td>mā</td><td>女(женщина) + 马</td><td>мама</td><td>妈妈 māma</td></tr>
+                    <tr><td class="chinese-big">码</td><td>mǎ</td><td>石(камень) + 马</td><td>номер, код</td><td>号码 hàomǎ</td></tr>
+                    <tr><td class="chinese-big">蚂</td><td>mǎ</td><td>虫(насекомое) + 马</td><td>муравей</td><td>蚂蚁 mǎyǐ</td></tr>
+                    <tr><td class="chinese-big">骂</td><td>mà</td><td>吅(кричать) + 马</td><td>ругать</td><td>骂人 màrén</td></tr>
+                    <tr><td class="chinese-big">玛</td><td>mǎ</td><td>王(нефрит) + 马</td><td>агат</td><td>玛瑙 mǎnǎo</td></tr>
+                    <tr><td class="chinese-big">犸</td><td>mǎ</td><td>犭(зверь) + 马</td><td>мамонт</td><td>猛犸 měngmǎ</td></tr>
+                </tbody>
+            </table>
+            <div class="example-block">
+                🧠 <strong>Мнемоника:</strong> «Лошадь (马) помогает маме (妈), стоит на номере (码), ругается (骂) с муравьём (蚂)». Звук ma прошит в каждом из этих слов.
+            </div>
+        </div>
+    </div>
+
+    <!-- ПРАВИЛО 12: ФОНЕТИК 青 -->
+    <div id="rule12" class="section">
+        <div class="section-header">
+            <span class="section-number">Секрет 12</span>
+            <span class="section-title">💚 Фонетик 青 qīng: чистота и ясность</span>
+        </div>
+        <div class="section-content">
+            <p><strong>Главная идея:</strong> 青 (зелёный/синий, чистый) — идеальный пример того, как один звук (qing) объединяет иероглифы с разными смыслами.</p>
+            
+            <table>
+                <thead><tr><th>Иероглиф</th><th>Пиньинь</th><th>Ключ</th><th>Значение</th><th>Пример</th></tr></thead>
+                <tbody>
+                    <tr><td class="chinese-big">请</td><td>qǐng</td><td>讠(речь)</td><td>просить, приглашать</td><td>请坐 qǐngzuò (садитесь)</td></tr>
+                    <tr><td class="chinese-big">清</td><td>qīng</td><td>氵(вода)</td><td>чистый, прозрачный</td><td>清水 qīngshuǐ (чистая вода)</td></tr>
+                    <tr><td class="chinese-big">晴</td><td>qíng</td><td>日(солнце)</td><td>солнечно, ясно</td><td>晴天 qíngtiān (ясный день)</td></tr>
+                    <tr><td class="chinese-big">情</td><td>qíng</td><td>忄(сердце)</td><td>чувство, любовь</td><td>感情 gǎnqíng (чувства)</td></tr>
+                    <tr><td class="chinese-big">睛</td><td>jīng</td><td>目(глаз)</td><td>глазное яблоко</td><td>眼睛 yǎnjīng (глаза)</td></tr>
+                    <tr><td class="chinese-big">蜻</td><td>qīng</td><td>虫(насекомое)</td><td>стрекоза</td><td>蜻蜓 qīngtíng (стрекоза)</td></tr>
+                </tbody>
+            </table>
+            <div class="example-block">
+                🌟 <strong>Фраза-запоминалка:</strong> «Прошу (请) в ясный день (晴) чистую воду (清) чувством (情) смотреть глазом (睛) на стрекозу (蜻)». Все 6 слов связаны единым звучанием qing/jing.
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    🧠 12 секретов китайской письменности | Смысл + Звук | 形声字 | Учите иероглифы осознанно
+</div>
+</body>
+</html>
